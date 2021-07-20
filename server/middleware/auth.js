@@ -2,7 +2,6 @@ import { User } from '../model/User.js';
 
 export const auth = (req, res, next) => {
   const token = req.cookies.x_auth;
-  console.log(req.cookies);
 
   User.findByToken(token, (err, user) => {
     if (err) {

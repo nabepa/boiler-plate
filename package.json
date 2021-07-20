@@ -6,13 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "backend": "nodemon app.js"
+    "start": "node server/app.js",
+    "backend": "nodemon server/app.js",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "author": "nabepa",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "concurrently": "^6.2.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
